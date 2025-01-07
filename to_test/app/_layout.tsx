@@ -1,11 +1,12 @@
 import '../global.css';
 import { Slot } from 'expo-router';
-import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import { store } from '../store';
 
 export default function RootLayout() {
   return (
-    <View className="flex-1 bg-gray-100">
+    <Provider store={store}>
       <Slot />
-    </View>
+    </Provider>
   );
 }
