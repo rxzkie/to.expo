@@ -13,7 +13,7 @@ export default function MainHome() {
       {/* Botón para Mini-Mental */}
       <TouchableOpacity
         className="bg-blue-500 p-4 rounded-lg mb-4 w-4/5"
-        onPress={() => router.push('./mini-mental-test')}
+        onPress={() => router.push('/mini-mental-test')} // Ruta correcta para Mini-Mental
       >
         <Text className="text-white text-lg text-center">Mini-Mental</Text>
       </TouchableOpacity>
@@ -21,7 +21,7 @@ export default function MainHome() {
       {/* Botón para Pfeiffer */}
       <TouchableOpacity
         className="bg-green-500 p-4 rounded-lg w-4/5"
-        onPress={() => router.push('./pfeiffer-test')}
+        onPress={() => router.push('/pfeiffer-test')} // Ruta correcta para Pfeiffer
       >
         <Text className="text-white text-lg text-center">Pfeiffer</Text>
       </TouchableOpacity>
