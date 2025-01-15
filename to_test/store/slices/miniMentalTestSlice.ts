@@ -1,33 +1,26 @@
+// store/slices/miniMentalTestSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Definir el tipo de estado
-type MiniMentalTestState = {
-  answers: Record<string, string>; // Almacenar respuestas de las preguntas
-};
+interface TestState {
+  answers: Record<string, string>;
+}
 
-const initialState: MiniMentalTestState = {
-  answers: {}, // Inicializamos las respuestas como un objeto vacío
+const initialState: TestState = {
+  answers: {},
 };
 
 const miniMentalTestSlice = createSlice({
-  name: 'miniMentalTest', // Nombre del slice
-  initialState, // Estado inicial
+  name: 'miniMentalTest',
+  initialState,
   reducers: {
-    // Acción para guardar una respuesta
     setAnswer: (state, action: PayloadAction<{ question: string; answer: string }>) => {
-      const { question, answer } = action.payload;
-      state.answers[question] = answer; // Guardamos la respuesta en el estado
+      state.answers[action.payload.question] = action.payload.answer;
     },
-    
-    // Acción para resetear todas las respuestas
     resetTest: (state) => {
-      state.answers = {}; // Resetear las respuestas
+      state.answers = {};
     },
   },
 });
 
-// Exportar las acciones para usarlas en los componentes
 export const { setAnswer, resetTest } = miniMentalTestSlice.actions;
-
-// Exportar el reducer para que se pueda usar en la configuración del store
 export default miniMentalTestSlice.reducer;
