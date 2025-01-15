@@ -16,7 +16,7 @@ export default function Step1Orientacion() {
     dispatch(setAnswer({ question: '¿En qué año estamos?', answer: yearAnswer }));
     dispatch(setAnswer({ question: '¿En qué mes estamos?', answer: monthAnswer }));
 
-    router.push('/(main)mini-mental-teststep-2-memoria');
+    router.push('/(main)/mini-mental-test/step-2-memoria');
   };
 
   return (

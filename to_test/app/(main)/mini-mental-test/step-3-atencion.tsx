@@ -17,7 +17,7 @@ export default function Step3Atencion() {
         answer: calculo,
       })
     );
-    router.push('/(main)mini-mental-teststep-4-lenguaje');
+    router.push('/(main)/mini-mental-test/step-4-lenguaje');
   };
 
   return (

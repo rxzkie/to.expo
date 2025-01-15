@@ -14,7 +14,7 @@ export default function Step4Lenguaje() {
   const handleNext = () => {
     dispatch(setAnswer({ question: 'Repetir la frase', answer: repeticion }));
     dispatch(setAnswer({ question: 'Órdenes simples', answer: comprension }));
-    router.push('/(main)mini-mental-teststep-5-dibujo');
+    router.push('/(main)/mini-mental-test/step-5-dibujo');
   };
 
   return (

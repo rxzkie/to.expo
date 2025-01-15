@@ -12,7 +12,7 @@ export default function Step2Memoria() {
 
   const handleNext = () => {
     dispatch(setAnswer({ question: 'Memoria de 3 palabras', answer: words }));
-    router.push('/(main)mini-mental-teststep-3-atencion');
+    router.push('/(main)/mini-mental-test/step-3-atencion');
   };
 
   return (
