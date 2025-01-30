@@ -8,7 +8,9 @@ import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system';
 
 export default function HojaDeRespuestas() {
+  
   const router = useRouter();
+
   const answers = useSelector((state: RootState) => state.test.answers);
 
   // Función para generar el contenido HTML del PDF

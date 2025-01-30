@@ -13,7 +13,7 @@ export default function MainHome() {
       {/* Botón para Mini-Mental */}
       <TouchableOpacity
         className="bg-blue-500 p-4 rounded-lg mb-4 w-4/5"
-        onPress={() => router.push('/mini-mental-test')} // Ruta correcta para Mini-Mental
+        onPress={() => router.push('/mini-mental-test/step-1-orientacion')} // Ruta correcta para Mini-Mental
       >
         <Text className="text-white text-lg text-center">Mini-Mental</Text>
       </TouchableOpacity>

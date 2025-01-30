@@ -27,12 +27,24 @@ export default function MiniMentalTestLayout() {
       {/* Encabezado */}
       <View className="flex-row justify-between items-center mb-4">
         <Text className="text-2xl font-bold text-gray-800">Mini-Mental Test</Text>
-        <TouchableOpacity
-          className="bg-red-500 px-4 py-2 rounded"
-          onPress={() => router.back()}
-        >
-          <Text className="text-white font-medium">Volver</Text>
-        </TouchableOpacity>
+        
+        <View className="flex-row space-x-2">
+          {/* Botón Volver */}
+          <TouchableOpacity
+            className="bg-red-500 px-4 py-2 rounded"
+            onPress={() => router.back()}
+          >
+            <Text className="text-white font-medium">Volver</Text>
+          </TouchableOpacity>
+
+          {/* Botón Ir al Inicio (Index) */}
+          <TouchableOpacity
+            className="bg-green-500 px-4 py-2 rounded"
+            onPress={() => router.push('/')} // Ahora lleva al index
+          >
+            <Text className="text-white font-medium">Ir al Inicio</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Barra de Progreso */}

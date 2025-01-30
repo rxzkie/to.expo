@@ -12,16 +12,22 @@ export default function Step1Orientacion() {
   // Estados locales para las respuestas
   const [yearAnswer, setYearAnswer] = useState('');
   const [monthAnswer, setMonthAnswer] = useState('');
+  const [saved, setSaved] = useState(false); // Estado para mostrar que se guardó
 
   // Recuperar las respuestas guardadas desde Redux
   const savedAnswers = useSelector((state: RootState) => state.test.answers);
 
-  const handleNext = () => {
-    // Guardar las respuestas en Redux
+  const handleSave = () => {
     dispatch(setAnswer({ question: '¿En qué año estamos?', answer: yearAnswer }));
     dispatch(setAnswer({ question: '¿En qué mes estamos?', answer: monthAnswer }));
+    setSaved(true); // Mostrar "Respuesta guardada"
+  };
 
-    // Navegar al siguiente paso
+  const handleNext = () => {
+    if (!saved) {
+      alert("Guarda tu respuesta antes de continuar.");
+      return;
+    }
     router.push('/(main)/mini-mental-test/step-2-memoria');
   };
 
@@ -61,13 +67,24 @@ export default function Step1Orientacion() {
         </Text>
       )}
 
-      {/* Botón para avanzar */}
-      <TouchableOpacity
-        className="bg-rose-300 p-4 rounded-lg shadow-md mt-6"
-        onPress={handleNext}
-      >
-        <Text className="text-yellow-900 font-semibold text-center">Siguiente</Text>
-      </TouchableOpacity>
+      {/* Contenedor de botones */}
+      <View className="flex-row justify-between items-center mt-6">
+        {/* Botón de Guardar (🎟️ Ticket) */}
+        <TouchableOpacity
+          className="bg-green-500 p-4 rounded-lg shadow-md flex-1 mr-2"
+          onPress={handleSave}
+        >
+          <Text className="text-white font-semibold text-center">🎟️ Guardar</Text>
+        </TouchableOpacity>
+
+        {/* Botón de Siguiente */}
+        <TouchableOpacity
+          className="bg-rose-300 p-4 rounded-lg shadow-md flex-1 ml-2"
+          onPress={handleNext}
+        >
+          <Text className="text-yellow-900 font-semibold text-center">Siguiente</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
